@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://baftnr6de3mdy"]
+
+[ext_resource type="Script" uid="uid://vvoppsp7glh5" path="res://Blocks/block.gd" id="1_c82x6"]
+[ext_resource type="Texture2D" uid="uid://ccqpo0070il7e" path="res://icon.svg" id="1_im0tn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfwl5"]
+size = Vector2(88, 20)
+
+[node name="Block" type="Area2D"]
+script = ExtResource("1_c82x6")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.8, 0.2)
+texture = ExtResource("1_im0tn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_xfwl5")
