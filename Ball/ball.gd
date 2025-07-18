@@ -3,6 +3,7 @@ extends Area2D
 @export var offset = 1
 @export var speed = 300
 @export var direction = Vector2(0, 1)
+
 var player : CharacterBody2D
 
 func _ready():
@@ -28,12 +29,12 @@ func _physics_process(delta: float):
 	
 func _alter_direction():
 	direction = direction * Vector2.UP
-	direction.x = randf_range(-0.8, 0.8)
-	print("Direction Changed")
+	direction.x = direction.x * -1
 	
 func _on_ball_hit(body: Node2D):
-	_alter_direction()
+	var velocity = global_position - body.global_position
+	direction = velocity.normalized()
 	
 func _on_ball_hit_area(area: Area2D):
+	print("This how we do it")
 	_alter_direction()
-	print("Ball Signal Success")
