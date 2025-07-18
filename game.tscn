@@ -1,6 +1,30 @@
-[gd_scene load_steps=2 format=3 uid="uid://cgejddq2hu82n"]
+[gd_scene load_steps=4 format=3 uid="uid://cgejddq2hu82n"]
 
 [ext_resource type="Script" uid="uid://vusl7pkv68bg" path="res://game_loop.gd" id="1_80nbo"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
+size = Vector2(16, 661)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2o6t"]
+size = Vector2(1173, 16)
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_80nbo")
+
+[node name="Wall2" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall2"]
+position = Vector2(-10, 320.5)
+shape = SubResource("RectangleShape2D_80nbo")
+
+[node name="Wall" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall"]
+position = Vector2(1159, 326)
+shape = SubResource("RectangleShape2D_80nbo")
+
+[node name="Ceiling" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+position = Vector2(579.5, -9)
+shape = SubResource("RectangleShape2D_e2o6t")

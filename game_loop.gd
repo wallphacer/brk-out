@@ -2,6 +2,7 @@ extends Node2D
 
 const player_scene = preload("res://Player/player.tscn")
 const block_scene = preload("res://Blocks/block.tscn")
+const ball_scene = preload("res://Ball/Ball.tscn")
 
 @export var screen_size : Vector2
 @export var vertical_offset = .9
@@ -25,6 +26,10 @@ func _ready():
 	add_child(block)
 	
 	block.block_destroyed.connect(_on_block_destroyed)
+	
+	# Spawn Ball - TEST
+	var ball = ball_scene.instantiate()
+	add_child(ball)	
 	
 func _on_block_destroyed():
 	score += 1
