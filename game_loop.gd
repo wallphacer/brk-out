@@ -20,13 +20,6 @@ func _ready():
 	player.set_position(Vector2(screen_width * vertical_offset, screen_height * horizontal_offset))
 	add_child(player)
 	
-	# Spawn Block - TEST
-	var block = block_scene.instantiate()
-	block.set_position(Vector2(player.position.x + 200 , player.position.y))
-	add_child(block)
-	
-	block.block_destroyed.connect(_on_block_destroyed)
-	
 	# Spawn Ball - TEST
 	var ball = ball_scene.instantiate()
 	add_child(ball)	
