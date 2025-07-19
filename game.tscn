@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cgejddq2hu82n"]
+[gd_scene load_steps=5 format=3 uid="uid://cgejddq2hu82n"]
 
 [ext_resource type="Script" uid="uid://vusl7pkv68bg" path="res://game_loop.gd" id="1_80nbo"]
+[ext_resource type="PackedScene" uid="uid://cc0oj6o6c1l8f" path="res://Blocks/block_pattern_generator.tscn" id="2_e2o6t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
 size = Vector2(16, 661)
@@ -28,3 +29,5 @@ shape = SubResource("RectangleShape2D_80nbo")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
 position = Vector2(579.5, -9)
 shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="BlockPatternGenerator" parent="." instance=ExtResource("2_e2o6t")]

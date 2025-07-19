@@ -28,13 +28,20 @@ func _physics_process(delta: float):
 	move(delta)
 	
 func _alter_direction():
-	direction = direction * Vector2.UP
 	direction.x = direction.x * -1
+	direction.y = direction.y * -1
 	
 func _on_ball_hit(body: Node2D):
-	var velocity = global_position - body.global_position
-	direction = velocity.normalized()
+	if body.name == "Breaker":
+		var velocity = global_position - body.global_position
+		direction = velocity.normalized()
+
 	
 func _on_ball_hit_area(area: Area2D):
-	print("This how we do it")
-	_alter_direction()
+	if area.name.contains("Wall"):
+		print("This how we do it")
+		direction.x = direction.x * -1
+	elif area.name == "Ceiling":
+		direction.y = Vector2.DOWN.y
+	else:
+		direction.y *= -1

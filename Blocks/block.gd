@@ -4,6 +4,7 @@ signal block_destroyed
 
 func _ready():
 	connect("body_entered", _on_body_entered)
+	connect("area_entered", _on_body_entered)
 
 func _on_body_entered(other):
 	print("Block was hit!")

@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://cc0oj6o6c1l8f"]
+[gd_scene load_steps=2 format=3 uid="uid://cc0oj6o6c1l8f"]
+
+[ext_resource type="Script" uid="uid://by21op8ikmvxf" path="res://Blocks/block_pattern_generator.gd" id="1_b8gwv"]
 
 [node name="BlockPatternGenerator" type="Node2D"]
+script = ExtResource("1_b8gwv")
