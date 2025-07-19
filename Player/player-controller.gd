@@ -1,7 +1,11 @@
 extends CharacterBody2D
 
 @export var move_speed = 600
+@export var buffer = 10
+@export var width : float
 
+func _ready():
+	width = get_viewport_rect().size.x
 func calculate_direction():
 	velocity.x
 	if Input.is_action_pressed("right"):
@@ -14,6 +18,13 @@ func calculate_direction():
 func _physics_process(delta: float):
 	calculate_direction()
 	move_and_slide()
+	
+	var size = get_node("CollisionShape2D").shape.extents
+	if(position.x <= size.x):
+		position.x = size.x + buffer
+		
+	if(position.x > (width - (size.x + buffer))):
+		position.x = width - (size.x + buffer)
 	
 		
 	
