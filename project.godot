@@ -30,7 +30,15 @@ left={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="ball"
+2d_physics/layer_2="paddle"
+2d_physics/layer_3="walls"
+2d_physics/layer_4="brick"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.141176, 0.14902, 0.141176, 1)

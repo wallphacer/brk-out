@@ -1,17 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://behchusubi73t"]
 
 [ext_resource type="Script" uid="uid://dgv6q8i01xu3c" path="res://Player/player-controller.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://ccqpo0070il7e" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dc0ga1rpu40a7" path="res://Player/paddle.png" id="2_4ntmi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(116, 20)
+size = Vector2(114, 14)
 
 [node name="Breaker" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(1, 0.2)
-texture = ExtResource("2_i3pqv")
+position = Vector2(-1.5, 1)
+scale = Vector2(0.274554, 0.151786)
+texture = ExtResource("2_4ntmi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_hqtel")
