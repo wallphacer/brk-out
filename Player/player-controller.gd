@@ -25,6 +25,8 @@ func _physics_process(delta: float):
 		
 	if(position.x > (width - (size.x + buffer))):
 		position.x = width - (size.x + buffer)
-	
+		
+func reset():
+	pass
 		
 	

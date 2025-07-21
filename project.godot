@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Breakout-clone"
-run/main_scene="uid://cgejddq2hu82n"
+run/main_scene="uid://ekt2ax38dilx"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 

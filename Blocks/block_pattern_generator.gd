@@ -3,6 +3,8 @@ extends Node2D
 @export var block_scene = preload("res://Blocks/block.tscn")
 @export var offset : int
 @export var amount : int
+
+var blocks = []
 func _ready():
 	offset = 5
 	amount = 12
@@ -23,3 +25,9 @@ func create_blocks():
 			
 			cur_block.block_destroyed.connect(game._on_block_destroyed)
 			add_child(cur_block)
+			blocks.append(cur_block)
+			
+func reset():
+	for block in blocks:
+		block.queue_free()
+			

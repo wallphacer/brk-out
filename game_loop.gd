@@ -27,9 +27,26 @@ func _ready():
 	
 	# Spawn Ball - TEST
 	var ball = ball_scene.instantiate()
+	ball.touched_dead.connect(_on_dead_touched)
 	add_child(ball)	
 	
 func _on_block_destroyed():
 	score += 1
 	print("Game Updated Score!")
 	score_update.emit(score)
+
+func _on_dead_touched():
+	print("Dead signal received")
+	score -= 5
+	if score < 0:
+		score = 0
+	score_update.emit(score)
+func reset():
+	score = 0
+	score_update.emit(score)
+	# Get Screen Size & Max Heights / Widths
+	screen_size = get_viewport_rect().size;
+	var screen_width = screen_size.y
+	var screen_height = screen_size.x
+	var player = player_scene.instantiate();
+	player.set_position(Vector2(screen_width * vertical_offset, screen_height * horizontal_offset))
