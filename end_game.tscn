@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://cooc5f75mqdf6"]
+
+[ext_resource type="Script" uid="uid://cl0m3n5weeysg" path="res://end_game.gd" id="1_sjse8"]
+
+[node name="end_game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 39.0
+offset_right = 827.0
+offset_bottom = 174.0
+text = "PLAY AGAIN?"
+script = ExtResource("1_sjse8")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]
