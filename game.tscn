@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgejddq2hu82n"]
+[gd_scene load_steps=6 format=3 uid="uid://cgejddq2hu82n"]
 
 [ext_resource type="Script" uid="uid://vusl7pkv68bg" path="res://game_loop.gd" id="1_80nbo"]
 [ext_resource type="PackedScene" uid="uid://cc0oj6o6c1l8f" path="res://Blocks/block_pattern_generator.tscn" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://cuy2jlwhf7kwt" path="res://game_hud.gd" id="3_feb5d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_80nbo"]
 size = Vector2(16, 661)
@@ -41,3 +42,22 @@ collision_layer = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall_dead"]
 position = Vector2(580, 647)
 shape = SubResource("RectangleShape2D_e2o6t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_feb5d")
+
+[node name="Score" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 1056.0
+offset_top = 4.0
+offset_right = 1150.0
+offset_bottom = 38.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="score_update" from="." to="Control" method="_on_game_score_update"]

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ekt2ax38dilx"]
+
+[ext_resource type="Script" uid="uid://dayl4dtno7let" path="res://main_menu.gd" id="1_3egxs"]
+[ext_resource type="Script" uid="uid://f8bqfsp5lyu6" path="res://start_game_button.gd" id="1_lhive"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3egxs")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 239.0
+offset_right = 764.0
+offset_bottom = 335.0
+text = "PLAY"
+script = ExtResource("1_lhive")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

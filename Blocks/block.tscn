@@ -19,3 +19,5 @@ texture = ExtResource("2_c82x6")
 position = Vector2(-1, 0)
 scale = Vector2(0.8, 0.8)
 shape = SubResource("RectangleShape2D_xfwl5")
+
+[connection signal="tree_exiting" from="." to="." method="_on_tree_exiting"]

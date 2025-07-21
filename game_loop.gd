@@ -4,12 +4,17 @@ const player_scene = preload("res://Player/player.tscn")
 const block_scene = preload("res://Blocks/block.tscn")
 const ball_scene = preload("res://Ball/ball.tscn")
 
+# Signals
+signal score_update(new_score : int)
+
 @export var screen_size : Vector2
 @export var vertical_offset = .9
 @export var horizontal_offset = .5
 @export var score = 0
 
 func _ready():
+	score = 0
+	
 	# Get Screen Size & Max Heights / Widths
 	screen_size = get_viewport_rect().size;
 	var screen_width = screen_size.y
@@ -27,3 +32,4 @@ func _ready():
 func _on_block_destroyed():
 	score += 1
 	print("Game Updated Score!")
+	score_update.emit(score)

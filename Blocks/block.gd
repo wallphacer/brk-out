@@ -12,3 +12,8 @@ func _on_body_entered(other):
 	print("Signal emitted!")
 	queue_free()
 	return
+
+
+func _on_tree_exiting() -> void:
+	print("Emitting Destroyed")
+	block_destroyed.emit()
