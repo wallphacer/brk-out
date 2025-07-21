@@ -1,19 +1,19 @@
 extends CharacterBody2D
 
-@export var move_speed = 600
+@export var move_speed = 700
 @export var buffer = 10
 @export var width : float
 
 func _ready():
 	width = get_viewport_rect().size.x
+	
 func calculate_direction():
-	velocity.x
 	if Input.is_action_pressed("right"):
-		velocity.x = move_speed * 1
+		velocity = Vector2.RIGHT * move_speed
 	elif Input.is_action_pressed("left"):
-		velocity.x = move_speed * -1
+		velocity = Vector2.LEFT * move_speed
 	else:
-		velocity.x *= .6
+		velocity *= .6
 
 func _physics_process(delta: float):
 	calculate_direction()
